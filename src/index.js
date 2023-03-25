@@ -1,20 +1,26 @@
-console.log("index.js works");
+"use strict";
 
-const elTestMessage = document.querySelector(".test-message");
-console.log(elTestMessage);
+//abstract function
+function AppearElementFunc(targetElementClass, className, delay = 0) {
+  // Logic to make an element appear on DOM
+  const targetElement = document.querySelector(targetElementClass);
+  //If statement to avoid errors if the target element is not found.
+  //We could use if (tergetElement), but the version below is more correct.
+  if (targetElement !== null) {
+    setTimeout(() => {
+      targetElement.classList.remove(className);
+    }, delay);
+  }
+}
 
-console.log(elTestMessage.classList);
-// elTestMessage.classList.remove("display-none");
-// console.log(elTestMessage.classList);
+//If the dom is loaded we make two messages appear with different timing
+window.addEventListener("DOMContentLoaded", () => {
+  //funtion instances
+  new AppearElementFunc(".test-message", "display-none", 5000);
+  new AppearElementFunc(".test-message-two", "display-none", 10000);
 
-const makeAppear = function () {
-  elTestMessage.classList.remove("display-none");
-  console.log(elTestMessage.classList);
-};
-
-setTimeout(() => {
-  // document.getElementsByClassName('test.message').
-
-  makeAppear();
-  console.log("timeOut 5 seconds.");
-}, "5000");
+  //A previous example showing possibilities. kept just for personal reference:
+  //const secondElement = new AppearElement(".test-message-two", "display-none", 10000);
+  // secondElement.targetElement.classList.add("alie");
+  //  test
+});
