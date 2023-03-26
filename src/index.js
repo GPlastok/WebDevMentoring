@@ -16,8 +16,8 @@ function AppearElementFunc(targetElementClass, className, delay = 0) {
 //If the dom is loaded we make two messages appear with different timing
 window.addEventListener("DOMContentLoaded", () => {
   //funtion instances
-  new AppearElementFunc(".test-message", "display-none", 5000);
-  new AppearElementFunc(".test-message-two", "display-none", 10000);
+  new AppearElementFunc(".test-message", "display-none", 0);
+  new AppearElementFunc(".test-message-two", "display-none", 0);
 
   //A previous example showing possibilities. kept just for personal reference:
   //const secondElement = new AppearElement(".test-message-two", "display-none", 10000);
