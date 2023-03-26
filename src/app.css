@@ -38,7 +38,7 @@ body {
 
 .sidebar {
   display: flex;
-  direction: column;
+  flex-direction: column;
   height: 100vh;
   background-color: chocolate;
   padding: 1em;
