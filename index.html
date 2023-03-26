@@ -11,21 +11,40 @@
   <body>
     <div class="page-container">
       <nav class="sidebar">
+        <button class="menu-toggle">close</button>
         <div class="logo"></div>
         <ul class="navlist">
-          <li class="navlist-listitem">
+          <li class="navlist-item">
             <a href="#">
-              <div>
-                <p>menuitem</p>
-              </div>
+              <span><ion-icon name="caret-forward-outline"></ion-icon></span>
+              <span>menuitem</span>
+            </a>
+          </li>
+          <li class="navlist-item">
+            <a href="#">
+              <span><ion-icon name="caret-forward-outline"></ion-icon></span>
+              <span>menuitem2</span>
             </a>
           </li>
         </ul>
       </nav>
-      <header class="hello">
-        <h1 class="test-message display-none">Hello World!</h1>
-        <h2 class="test-message-two display-none">This is a second message</h2>
-      </header>
+      <div class="page-content">
+        <header class="hello">
+          <h1 class="test-message display-none">Hello World!</h1>
+          <h2 class="test-message-two display-none">
+            This is a second message
+          </h2>
+        </header>
+        <div class="test-rectangle"></div>
+      </div>
     </div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
   </body>
 </html>
