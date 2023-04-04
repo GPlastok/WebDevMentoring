@@ -27,16 +27,16 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   position: relative;
-
   margin: 0;
 }
 
 .page-container {
-  display: flex;
+  /* display: flex; */
   flex-direction: row;
   background-color: rgb(22, 22, 22);
   min-height: 100vh;
-  transition: all 0.5s ease-in-out;
+  /* transition: all 0.5s ease-in-out; */
+  /* #FIX# ---> For some reason transition doesn't have an effect on sidebar on off  */
 }
 
 .page-content {

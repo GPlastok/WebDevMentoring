@@ -35,41 +35,20 @@ function appearElementFunc(targetElementClass, className, delay = 0) {
 
 function toggleMenu(
   buttonClassName,
-  // toggleBool,
   affectedElementClassName,
   switchClassNameString
 ) {
   const toggleMenuElement = document.querySelector(buttonClassName);
   const affectedElement = document.querySelector(affectedElementClassName);
+  const switchClass = String(switchClassNameString);
 
-  console.log(toggleMenuElement);
-  console.log(affectedElement);
-  //test to remove
-  // if (affectedElement.classList.contains(switchClassNameString)) {
-  //   console.log(`switch class is in`);
-  // }
-  //FIX =========>>>>>   switchClassNameString doesnt work. error
   if (toggleMenuElement !== null && affectedElement !== null) {
     toggleMenuElement.addEventListener("click", () => {
-      console.log(`affectedElement switch is clicked`);
-      console.log(affectedElement.classList);
-
-      if (affectedElement.classList.contains("sidebar--closed")) {
-        console.log(`affected element contains class`);
-        affectedElement.classList.remove("sidebar--closed");
-
-        console.log(`affected element classlist remove`);
-        // toggleBool = false;
-        // console.log(switchClassNameString);
-      } else if (
-        affectedElement.classList.contains("sidebar--closed") === false
-      ) {
-        console.log(`class not found`);
-        affectedElement.classList.add("sidebar--closed");
-        // toggleBool = true;
-        // toggleBool.target.innerHTML = "clicked";
+      if (affectedElement.classList.contains(switchClass)) {
+        affectedElement.classList.remove(switchClass);
+      } else if (affectedElement.classList.contains(switchClass) === false) {
+        affectedElement.classList.add(switchClass);
       }
-      // console.log(`hello from ${toggleBool}`);
     });
   }
 }
@@ -89,7 +68,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //A previous example showing possibilities. kept just for personal reference:
   //This works only when we have this.examplelement
-  //new functionblahblah only when function uses this.fdetffyu
+  //new functionblahblah only when function uses this.whatever
   //const secondElement = new AppearElement(".test-message-two", "display-none", 10000);
   // secondElement.targetElement.classList.add("alie");
   //  test
