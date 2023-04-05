@@ -46,8 +46,11 @@ function toggleMenu(
     toggleMenuElement.addEventListener("click", () => {
       if (affectedElement.classList.contains(switchClass)) {
         affectedElement.classList.remove(switchClass);
+
+        toggleMenuElement.innerHTML = "close";
       } else if (affectedElement.classList.contains(switchClass) === false) {
         affectedElement.classList.add(switchClass);
+        toggleMenuElement.innerHTML = "open";
       }
     });
   }
