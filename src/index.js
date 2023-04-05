@@ -33,6 +33,44 @@ function appearElementFunc(targetElementClass, className, delay = 0) {
 //The parameter toggleBool is good for temporarily switching through code, but it's
 //probably not needed for the final version
 
+function ToggleMenuClass(
+  buttonClassName,
+  affectedElementClassName,
+  switchClassNameString,
+  changeContentArr = [choiceZero, choiceOne]
+) {
+  this.affectedElementClassName = affectedElementClassName;
+  this.switchClassNameString = switchClassNameString;
+  this.changeContentArr = changeContentArr;
+  this.affectedElement = document.querySelector(affectedElementClassName);
+  this.toggleMenuElement = document.querySelector(buttonClassName);
+  this.this.printAffected = function () {
+    console.log(this.affectedElement);
+  };
+  this.toggleFunction = function () {
+    if (toggleMenuElement !== null && affectedElement !== null) {
+      toggleMenuElement.addEventListener("click", () => {
+        if (affectedElement.classList.contains(switchClass)) {
+          affectedElement.classList.remove(switchClass);
+
+          toggleMenuElement.innerHTML = String(changeContentArr[0]);
+        } else if (affectedElement.classList.contains(switchClass) === false) {
+          affectedElement.classList.add(switchClass);
+          toggleMenuElement.innerHTML = String(changeContentArr[1]);
+        }
+      });
+    }
+  };
+}
+
+const toggleInstance = new ToggleMenuClass(
+  ".menu-toggle",
+  ".sidebar",
+  "sidebar--closed",
+  ["close", "open"]
+);
+toggleInstance.printAffected();
+
 function toggleMenu(
   buttonClassName,
   affectedElementClassName,
