@@ -36,21 +36,23 @@ function appearElementFunc(targetElementClass, className, delay = 0) {
 function toggleMenu(
   buttonClassName,
   affectedElementClassName,
-  switchClassNameString
+  switchClassNameString,
+  changeContentArr = [choiceZero, choiceOne]
 ) {
   const toggleMenuElement = document.querySelector(buttonClassName);
   const affectedElement = document.querySelector(affectedElementClassName);
   const switchClass = String(switchClassNameString);
+  // const changeContentArr = [choiceZero, choiceOne];
 
   if (toggleMenuElement !== null && affectedElement !== null) {
     toggleMenuElement.addEventListener("click", () => {
       if (affectedElement.classList.contains(switchClass)) {
         affectedElement.classList.remove(switchClass);
 
-        toggleMenuElement.innerHTML = "close";
+        toggleMenuElement.innerHTML = String(changeContentArr[0]);
       } else if (affectedElement.classList.contains(switchClass) === false) {
         affectedElement.classList.add(switchClass);
-        toggleMenuElement.innerHTML = "open";
+        toggleMenuElement.innerHTML = String(changeContentArr[1]);
       }
     });
   }
@@ -67,7 +69,7 @@ window.addEventListener("DOMContentLoaded", () => {
 
   //MOVE THE BOOL BELOW IN PROGRAM START (This is to be used as toggleBool in the toggleMenu function)
   // let menuOn = true;
-  toggleMenu(".menu-toggle", ".sidebar", "sidebar--closed");
+  toggleMenu(".menu-toggle", ".sidebar", "sidebar--closed", ["close", "open"]);
 
   //A previous example showing possibilities. kept just for personal reference:
   //This works only when we have this.examplelement
