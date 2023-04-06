@@ -79,7 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
             close: 'kill',
             open: 'expand'
         });
-    
+
 
 
     //A previous example showing possibilities. kept just for personal reference:
