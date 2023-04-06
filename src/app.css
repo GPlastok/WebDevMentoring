@@ -55,7 +55,16 @@ body {
   padding: 1em;
   gap: 30px;
   position: fixed;
-  transition: all 1s ease-in-out;
+  transition: all 0.4s ease-in-out;
+}
+
+.sidebar.sidebar--closed {
+  background-color: rgb(21, 88, 234);
+  transform: translateX(-75px);
+}
+
+.sidebar.sidebar--closed:hover {
+  transform: translateX(0);
 }
 
 .logo {
