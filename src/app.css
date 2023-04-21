@@ -1,169 +1,180 @@
 html {
-  -webkit-font-smoothing: antialiased;
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    -webkit-font-smoothing: antialiased;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
 a {
-  color: rgb(0, 0, 0);
-  text-decoration: none;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
 }
 
 h1,
 h2,
 h3,
 p {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  position: relative;
-  margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    position: relative;
+    margin: 0;
 }
 
 .page-container {
-  /* display: flex; */
-  flex-direction: row;
-  background-color: rgb(22, 22, 22);
-  min-height: 100vh;
-  /* transition: all 0.5s ease-in-out; */
-  /* #FIX# ---> For some reason transition doesn't have an effect on sidebar on off  */
+    /* display: flex; */
+    flex-direction: row;
+    background-color: rgb(22, 22, 22);
+    min-height: 100vh;
+    /* transition: all 0.5s ease-in-out; */
+    /* #FIX# ---> For some reason transition doesn't have an effect on sidebar on off  */
 }
 
 .page-content {
-  display: flex;
-  flex-direction: column;
-  min-width: 25vw;
-  max-width: 1140px;
-  margin: 0 auto 0 16vw;
+    display: flex;
+    flex-direction: column;
+    min-width: 25vw;
+    max-width: 1140px;
+    margin: 0 auto 0 16vw;
 }
 
 .sidebar {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  background-color: rgb(44, 44, 44);
-  padding: 1em;
-  gap: 30px;
-  position: fixed;
-  transition: all 1s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: rgb(44, 44, 44);
+    padding: 1em;
+    gap: 30px;
+    position: fixed;
+    transition: all 0.4s ease-in-out;
 }
 
+.sidebar.sidebar--closed {
+    background-color: rgb(21, 88, 234);
+    transform: translateX(-75px);
+}
+
+.sidebar.sidebar--closed:hover {
+    transform: translateX(0);
+}
+
+
 .logo {
-  height: 32px;
-  width: 64px;
-  border-radius: 300px;
-  border: solid 2px white;
-  background-color: blue;
-  margin-top: 16px;
-  justify-self: center;
-  align-self: center;
+    height: 32px;
+    width: 64px;
+    border-radius: 300px;
+    border: solid 2px white;
+    background-color: blue;
+    margin-top: 16px;
+    justify-self: center;
+    align-self: center;
 }
 
 .navlist {
-  display: flex;
-  flex-direction: column;
-  gap: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
 }
 
 .navlist-item {
-  border-radius: 1em;
+    border-radius: 1em;
 }
 
 .sidebar--closed span:nth-of-type(2) {
-  display: none;
+    display: none;
 }
 
 .sidebar--closed span {
-  justify-self: center;
+    justify-self: center;
 }
 
 .sidebar--closed .logo {
-  height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
 }
 
 .sidebar--closed .menu-toggle {
-  left: 50px;
+    left: 50px;
 }
 
 .sidebar--closed .navlist-item a {
-  border-radius: 300px;
-  background-color: black;
-  padding: 16px;
-  justify-content: space-around;
+    border-radius: 300px;
+    background-color: black;
+    padding: 16px;
+    justify-content: space-around;
 }
 
 .navlist a {
-  color: rgb(247, 150, 89);
+    color: rgb(247, 150, 89);
 
-  transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 .navlist a:hover {
-  color: rgb(255, 191, 152);
-  background-color: rgb(78, 78, 78);
-  border-radius: 0 2em 2em 0;
+    color: rgb(255, 191, 152);
+    background-color: rgb(78, 78, 78);
+    border-radius: 0 2em 2em 0;
 }
 
 .navlist-item a {
-  display: flex;
-  align-items: center;
-  padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    padding: 8px 16px;
 }
 
 .navlist-item a span:first-child {
-  display: flex;
-  height: 15px;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    height: 15px;
+    align-items: center;
+    justify-content: center;
 }
 
 .menu-toggle {
-  background: inherit;
-  color: rgb(225, 225, 225);
-  border: none;
-  border-radius: 8px 8px 0 0;
-  padding: 0.5em 1em;
-  font: inherit;
-  cursor: pointer;
-  outline: inherit;
-  position: absolute;
-  transform: rotate(90deg);
-  top: 2em;
-  left: 132px;
+    background: inherit;
+    color: rgb(225, 225, 225);
+    border: none;
+    border-radius: 8px 8px 0 0;
+    padding: 0.5em 1em;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    position: absolute;
+    transform: rotate(90deg);
+    top: 2em;
+    left: 132px;
 }
 
 .menu-toggle:hover {
-  color: white;
-  font-size: 1.05em;
+    color: white;
+    font-size: 1.05em;
 }
 
 /* ------------------- */
 .hello {
-  color: white;
+    color: white;
 }
 
 .test-message {
-  font-size: 6rem;
+    font-size: 6rem;
 }
 
 .display-none {
-  display: none;
+    display: none;
 }
 
 .test-rectangle {
-  margin-top: 64px;
-  height: 300px;
-  width: 600px;
-  background-color: white;
+    margin-top: 64px;
+    height: 300px;
+    width: 600px;
+    background-color: white;
 }
