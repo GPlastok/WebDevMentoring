@@ -45,6 +45,61 @@ body {
   margin: 0;
 }
 
+/* BUTTONS */
+
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+
+  text-decoration: none;
+  font-size: 1em;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+
+  /* Only necessary for .btn */
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+
+  /* Put transition on original "state" */
+  /* transition: background-color 0.3s; */
+  transition: all 0.3s;
+  background-color: var(--main-bg-color);
+  color: var(--white-color);
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: var(--main-bg-color);
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  background-color: var(--accent-color);
+  color: var(--main-bg-color);
+}
+
+/* .btn--outline:link,
+.btn--outline:visited {
+  background-color: #fff;
+  color: #555;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+
+  /* border: 3px solid #fff; */
+
+/* Trick to add border inside */
+/* box-shadow: inset 0 0 0 3px #fff;
+} */
+
+/*  */
+
 .page-container {
   /* display: flex; */
   flex-direction: row;
@@ -53,7 +108,6 @@ body {
   position: relative;
 
   /* transition: all 0.5s ease-in-out; */
-  /* #FIX# ---> For some reason transition doesn't have an effect on sidebar on off  */
 }
 
 .main-background-img-container {
@@ -93,13 +147,25 @@ body {
   height: 100%;
 }
 
+.sidebar:not(.sidebar--closed) + .background-blurry {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(53, 28, 7, 0.219);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(30px);
+  z-index: 98;
+}
+
 .sidebar.sidebar--closed {
   /* background-color: var(--main-color); */
   transform: translateX(-184px);
 }
 
-/* .menu-toggle {
-  
+/* IF I DECIDE TO STOP HOVER FUNCTIONALITY DO THIS FOR SAFETY (useful for modal as well) */
+/* .sidebar.sidebar--closed :not(.menu-toggle) {
+  pointer-events: none;
 } */
 
 .sidebar.sidebar--closed:hover {
@@ -287,6 +353,87 @@ body {
   width: 600px;
   background-color: white;
 }
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-color: rgba(54, 42, 37, 0.349);
+  backdrop-filter: blur(30px);
+  z-index: 99;
+}
+
+.modal {
+  position: relative;
+  max-width: 20em;
+  top: 50vh;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white-color);
+  padding: 2em;
+  gap: 1em;
+  border-radius: 1em;
+  box-shadow: 0 1em 16px rgba(48, 48, 48, 0.25);
+}
+
+.modal p {
+  display: inline-block;
+  margin-top: 2em;
+  align-self: center;
+  justify-self: center;
+}
+
+.scull {
+  font-size: 8em;
+  position: absolute;
+  top: -72px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #11ae88;
+}
+
+.close-icon {
+  color: var(--white-color);
+  font-size: 4em;
+  position: absolute;
+  right: -4rem;
+  top: -4rem;
+}
+
+.close-icon:hover {
+  color: var(--accent-color);
+}
+
+.page-container.modal-container {
+  background-color: #fa9e00;
+}
+
+/* .background-blurry:has(.modal) {
+  position: fixed;
+  background-color: red;
+  width: 400px;
+} */
+
+/* .modal + .background-blurry {
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(53, 28, 7, 0.219);
+  position: fixed;
+  top: 0;
+  left: 0;
+  backdrop-filter: blur(30px);
+  z-index: 98;
+} */
+
+/*  */
+
+/* empty space */
+
+/*  */
 
 /* QUERIES */
 /**************************/
