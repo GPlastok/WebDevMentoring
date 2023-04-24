@@ -50,6 +50,7 @@ body {
   flex-direction: row;
   background-color: var(--main-bg-color);
   min-height: 100vh;
+  position: relative;
 
   /* transition: all 0.5s ease-in-out; */
   /* #FIX# ---> For some reason transition doesn't have an effect on sidebar on off  */
@@ -88,7 +89,8 @@ body {
   position: fixed;
   transition: all 0.4s ease-in-out;
   text-align: center;
-  z-index: 100;
+  z-index: 99;
+  height: 100%;
 }
 
 .sidebar.sidebar--closed {
@@ -243,7 +245,7 @@ body {
 }
 
 .menu-toggle {
-  background: inherit;
+  background-color: var(--main-color);
   color: var(--main-dark-color);
   border: none;
   border-radius: 8px 8px 0 0;
@@ -256,8 +258,9 @@ body {
   transform: rotate(90deg);
   /* -webkit-transform: rotate(90deg); */
   top: 3em;
-  left: 158px;
+  left: 154px;
   width: 94px;
+  z-index: 999;
 }
 
 /* .menu-toggle:hover {
@@ -296,16 +299,15 @@ body {
   }
   .sidebar {
     transform: translate(0px) !important;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     padding: 0px;
+    height: 100vh;
   }
 
   .menu-toggle {
-    background: inherit;
-    color: var(--main-dark-color);
     border: none;
     border-radius: 8px 8px 0 0;
     padding: 0.5em 1em;
@@ -313,20 +315,92 @@ body {
     /* font-family: sans-serif; */
     /* cursor: pointer; */
     outline: inherit;
-    position: absolute;
+    position: fixed;
     transform: rotate(90deg);
     /* -webkit-transform: rotate(90deg); */
     top: 3em;
-    left: 340px;
+    left: 91%;
     width: 94px;
   }
 
-  /* .page-container:not(.sidebar--closed) {
+  .page-container:not(.sidebar--closed) {
+    overflow: hidden;
+  }
+
+  .sidebar:not(.sidebar--closed) .menu-toggle {
+    left: 82%;
+    top: 2em;
+  }
+  /* .page-container :not(.sidebar--closed) {
     overflow: hidden;
     background-color: red;
-    /* display: flex; */
-
-    /* transition: all 0.5s ease-in-out; */
-    /* #FIX# ---> For some reason transition doesn't have an effect on sidebar on off  */
+    
   } */
+}
+
+@media (max-height: 35em) {
+  .sidebar.sidebar--closed {
+    transform: translate(-99%) !important;
+  }
+
+  .sidebar--closed .navlist {
+    flex-direction: column;
+  }
+
+  .navlist {
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    transform: translate(0px) !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0px;
+    height: 100vh;
+  }
+
+  .menu-toggle {
+    border: none;
+    border-radius: 8px 8px 0 0;
+    padding: 0.5em 1em;
+    font: inherit;
+
+    outline: inherit;
+    position: fixed;
+
+    top: 3em;
+    left: 96%;
+    width: 94px;
+  }
+
+  .page-container:not(.sidebar--closed) {
+    overflow: hidden;
+  }
+
+  .sidebar:not(.sidebar--closed) .menu-toggle {
+    left: 88%;
+    top: 2em;
+  }
+}
+
+@media (max-height: 30em) {
+  .logo {
+    min-height: 0em;
+    height: 1.5em;
+  }
+}
+
+@media (max-height: 21em) {
+  .logo {
+    display: none;
+  }
+}
+
+@media (max-width: 49em) and (max-height: 24em) {
+  .menu-toggle {
+    left: 94%;
+  }
 }
