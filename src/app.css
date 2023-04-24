@@ -373,8 +373,9 @@ body {
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
+
   background-color: var(--white-color);
-  padding: 2em;
+  padding: 1.5em;
   gap: 1em;
   border-radius: 1em;
   box-shadow: 0 1em 16px rgba(48, 48, 48, 0.25);
@@ -382,7 +383,7 @@ body {
 
 .modal p {
   display: inline-block;
-  margin-top: 2em;
+  margin-top: 4em;
   align-self: center;
   justify-self: center;
 }
@@ -406,6 +407,8 @@ body {
 
 .close-icon:hover {
   color: var(--accent-color);
+  border-radius: 50%;
+  box-shadow: 0 0em 16px rgba(212, 192, 5, 0.562);
 }
 
 .page-container.modal-container {
