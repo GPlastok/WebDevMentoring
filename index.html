@@ -4,32 +4,58 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Georgios Kondylis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="app.css" />
     <script src="index.js"></script>
   </head>
 
   <body>
     <div class="page-container">
+      <div class="main-background-img-container"></div>
       <nav class="sidebar sidebar--closed">
-        <button class="menu-toggle">close</button>
+        <button class="menu-toggle">menu</button>
+        <div class="logo-name">
+          Georgios <br />
+          Kondylis
+        </div>
         <div class="logo">
-          <img src="src/img/avatar-img-bw.jpg" alt="avatar large in sidebar" />
+          <!-- <img src="img/avatar-img-bw.jpg" alt="avatar large in sidebar" /> -->
+        </div>
+        <div class="logo-name-aka">
+          a.k.a. Plastok
+          <div class="logo-subtitle">UI Splendor</div>
         </div>
         <ul class="navlist">
           <li class="navlist-item">
             <a href="#">
-              <span><ion-icon name="caret-forward-outline"></ion-icon></span>
-              <span>menuitem</span>
+              <span>Projects</span>
+              <span><ion-icon name="folder"></ion-icon></span>
             </a>
           </li>
           <li class="navlist-item">
             <a href="#">
-              <span><ion-icon name="caret-forward-outline"></ion-icon></span>
-              <span>menuitem2</span>
+              <span>About</span>
+              <span><ion-icon name="help-circle"></ion-icon></span>
+            </a>
+          </li>
+          <li class="navlist-item">
+            <a href="#">
+              <span>Contact</span>
+              <span><ion-icon name="chatbubble"></ion-icon></span>
             </a>
           </li>
         </ul>
+        <div class="social-icons">
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="#"><ion-icon name="share-social"></ion-icon></a>
+        </div>
       </nav>
       <div class="page-content">
         <header class="hello">
