@@ -363,6 +363,7 @@ body {
   background-color: rgba(54, 42, 37, 0.349);
   backdrop-filter: blur(30px);
   z-index: 99;
+  /* display: none; */
 }
 
 .modal {
@@ -397,7 +398,7 @@ body {
   color: #11ae88;
 }
 
-.close-icon {
+.close-dialog-icon {
   color: var(--white-color);
   font-size: 4em;
   position: absolute;
@@ -405,7 +406,7 @@ body {
   top: -4rem;
 }
 
-.close-icon:hover {
+.close-dialog-icon:hover {
   color: var(--accent-color);
   border-radius: 50%;
   box-shadow: 0 0em 16px rgba(212, 192, 5, 0.562);
@@ -413,6 +414,11 @@ body {
 
 .page-container.modal-container {
   background-color: #fa9e00;
+}
+
+.btn-open-modal {
+  max-width: fit-content;
+  border: solid;
 }
 
 /* .background-blurry:has(.modal) {

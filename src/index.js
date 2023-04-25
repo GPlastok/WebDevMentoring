@@ -15,24 +15,6 @@ function appearElementFunc(targetElementClass, className, delay = 0) {
 
 //---------------MENU TOGGLE EVENT-------------------
 
-// function toggleMenu(buttonClassName) {
-//   const toggleMenuElement = document.querySelector(buttonClassName);
-
-//   console.log(toggleMenuElement);
-
-//   if (toggleMenuElement !== null) {
-//     toggleMenuElement.addEventListener("click", onMenuToggleClick);
-//   }
-// }
-
-// function onMenuToggleClick(event) {
-//   console.log(`hello from ${event.target}`);
-//   event.target.innerHTML = "clicked";
-// }
-
-//The parameter toggleBool is good for temporarily switching through code, but it's
-//probably not needed for the final version
-
 function toggleMenu(
   buttonClassName,
   affectedElementClassName,
@@ -64,6 +46,32 @@ function toggleMenu(
   }
 }
 
+// --------MODAL TOGGLE EVENT-------------
+function toggleModal(
+  buttonClassName,
+  affectedElementClassName,
+  switchClassNameString
+) {
+  let isModalOpen = false;
+  const toggleModalElement = document.querySelector(buttonClassName); // button switch DOM
+  const affectedElement = document.querySelector(affectedElementClassName);
+
+  function fireToggle() {
+    // on each click this function runs
+    isModalOpen = !isModalOpen;
+    affectedElement.classList.toggle(switchClassNameString);
+  }
+
+  console.log(affectedElement);
+
+  if (toggleModalElement !== null && affectedElement !== null) {
+    // check if elements are rendered to DOM
+
+    toggleModalElement.addEventListener("click", fireToggle); // 1st call of function
+    toggleModalElement.addEventListener("keydown", fireToggle); //2nd call of function
+  }
+}
+
 //----------------------------------------------------
 //----------START PROGRAM-----------------------------
 //
@@ -73,12 +81,12 @@ window.addEventListener("DOMContentLoaded", () => {
   appearElementFunc(".test-message", "display-none", 1500);
   appearElementFunc(".test-message-two", "display-none", 2000);
 
-  //MOVE THE BOOL BELOW IN PROGRAM START (This is to be used as toggleBool in the toggleMenu function)
-  // let menuOn = true;
   toggleMenu(".menu-toggle", ".sidebar", "sidebar--closed", {
     close: "CLOSE",
     open: "MENU",
   });
+
+  toggleModal(".btn-toggle-modal", ".modal-container", "display-none");
 
   //A previous example showing possibilities. kept just for personal reference:
   //This works only when we have this.examplelement
