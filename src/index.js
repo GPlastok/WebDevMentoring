@@ -47,28 +47,41 @@ function toggleMenu(
 }
 
 // --------MODAL TOGGLE EVENT-------------
+
 function toggleModal(
   buttonClassName,
   affectedElementClassName,
   switchClassNameString
 ) {
-  let isModalOpen = false;
-  const toggleModalElement = document.querySelector(buttonClassName); // button switch DOM
+  // let isModalOpen = false;
+  const toggleModalElements = document.querySelectorAll(buttonClassName); // button switch DOM
   const affectedElement = document.querySelector(affectedElementClassName);
 
+  // console.log(affectedElement, switchClassNameString);
+  // console.log(affectedElement.classList);
   function fireToggle() {
+    console.log("fireToggle called"); // Debugging line
+
     // on each click this function runs
-    isModalOpen = !isModalOpen;
+
+    // isModalOpen = !isModalOpen;
+
     affectedElement.classList.toggle(switchClassNameString);
+
+    console.log(`fireToggle works all the time`);
   }
 
-  console.log(affectedElement);
-
-  if (toggleModalElement !== null && affectedElement !== null) {
+  if (toggleModalElements !== null && affectedElement !== null) {
+    console.log("Adding event listeners"); // Debugging line
     // check if elements are rendered to DOM
+    toggleModalElements.forEach((element) => {
+      element.addEventListener("click", fireToggle);
+    }); // 1st call of function
 
-    toggleModalElement.addEventListener("click", fireToggle); // 1st call of function
-    toggleModalElement.addEventListener("keydown", fireToggle); //2nd call of function
+    //--Here, ONLY if modal is open close it
+    //   if (affectedElement.classList) {
+    //   toggleModalElement.addEventListener("keydown", fireToggle); //2nd call of function
+    // }
   }
 }
 
@@ -86,7 +99,7 @@ window.addEventListener("DOMContentLoaded", () => {
     open: "MENU",
   });
 
-  toggleModal(".btn-toggle-modal", ".modal-container", "display-none");
+  toggleModal(".btn-toggle-modal", ".modal-container", "modal--closed");
 
   //A previous example showing possibilities. kept just for personal reference:
   //This works only when we have this.examplelement
@@ -94,4 +107,8 @@ window.addEventListener("DOMContentLoaded", () => {
   //const secondElement = new AppearElement(".test-message-two", "display-none", 10000);
   // secondElement.targetElement.classList.add("alie");
   //  test
+
+  //test to delete:
+  // const buttonTest = document.querySelector(`.btn-toggle-modal`);
+  // console.log.all(`buttonTest: ${buttonTest}`);
 });
