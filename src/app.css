@@ -125,11 +125,11 @@ body {
 
 .page-content {
   position: relative;
-  display: flex;
-  flex-direction: column;
+  /* display: flex; */
+  /* flex-direction: column; */
   min-width: 25vw;
-  max-width: 1140px;
-  margin: 0 auto 0 16vw;
+  max-width: 1120px;
+  margin: 0 auto 0 4em;
 }
 
 .sidebar {
