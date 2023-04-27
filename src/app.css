@@ -123,6 +123,7 @@ figure {
   background-color: var(--main-bg-color);
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
 
   /* transition: all 0.5s ease-in-out; */
 }
@@ -150,6 +151,10 @@ figure {
 #section-selected-projects {
   margin-top: 336px;
 }
+
+/* ----------- */
+/* MENU */
+/* ----------- */
 
 .sidebar {
   display: flex;
@@ -352,6 +357,8 @@ figure {
   color: var(--accent-color);
 }
 
+/* ------------------- */
+/* TEST MESSAGES */
 /* ------------------- */
 .hello {
   color: white;
