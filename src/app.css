@@ -265,7 +265,7 @@ figure {
 .sidebar .navlist-item a {
   border-radius: 0px;
   background-color: var(--main-dark-color);
-  padding: 16px;
+  padding: 16px 16px 16px 24px;
   justify-content: space-between;
 }
 
