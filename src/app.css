@@ -58,7 +58,12 @@ figure {
 .grid-4cols {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
   gap: 32px;
+}
+
+.grid-item--1col:nth-child(1) {
+  grid-column: 2;
 }
 
 /* ------------ */
@@ -192,9 +197,9 @@ figure {
   pointer-events: none;
 } */
 
-.sidebar.sidebar--closed:hover {
+/* .sidebar.sidebar--closed:hover {
   transform: translateX(0);
-}
+} */
 
 .sidebar span {
   justify-self: center;
