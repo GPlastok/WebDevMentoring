@@ -15,51 +15,87 @@ function appearElementFunc(targetElementClass, className, delay = 0) {
 
 //---------------MENU TOGGLE EVENT-------------------
 
-// function toggleMenu(buttonClassName) {
-//   const toggleMenuElement = document.querySelector(buttonClassName);
-
-//   console.log(toggleMenuElement);
-
-//   if (toggleMenuElement !== null) {
-//     toggleMenuElement.addEventListener("click", onMenuToggleClick);
-//   }
-// }
-
-// function onMenuToggleClick(event) {
-//   console.log(`hello from ${event.target}`);
-//   event.target.innerHTML = "clicked";
-// }
-
-//The parameter toggleBool is good for temporarily switching through code, but it's
-//probably not needed for the final version
-
-
-function toggleMenu(buttonClassName,
-                    affectedElementClassName,
-                    switchClassNameString,
-                    buttonLabel = {}) {
-
+function toggleMenu(
+    buttonClassName,
+    affectedElementClassName,
+    switchClassNameString,
+    buttonLabel = {}
+) {
     // Declaration of local variables and local statements as functions
     let isMenuExpanded = false;
     const toggleMenuElement = document.querySelector(buttonClassName); // button switch DOM
     const affectedElement = document.querySelector(affectedElementClassName); // target element DOM
 
     function updateButtonLabel() {
-        toggleMenuElement.innerText = isMenuExpanded ? buttonLabel.close : buttonLabel.open;
+        toggleMenuElement.innerText = isMenuExpanded
+            ? buttonLabel.close
+            : buttonLabel.open;
     }
 
-    function fireToggle() { // on each click this function runs
+    function fireToggle() {
+        // on each click this function runs
         isMenuExpanded = !isMenuExpanded;
         affectedElement.classList.toggle(switchClassNameString);
         updateButtonLabel();
     }
 
-    if (toggleMenuElement !== null && affectedElement !== null) { // check if elements are rendered to DOM
+    if (toggleMenuElement !== null && affectedElement !== null) {
+        // check if elements are rendered to DOM
         updateButtonLabel(); // 1st call of function
         toggleMenuElement.addEventListener("click", fireToggle); // 2nd call of function
     }
 }
 
+// --------MODAL TOGGLE EVENT-------------
+
+function toggleModal(
+    buttonClassName,
+    affectedElementClassName,
+    switchClassNameString
+) {
+    // let isModalOpen = false;
+    const toggleModalElements = document.querySelectorAll(buttonClassName); // button switch DOM
+    const affectedElement = document.querySelector(affectedElementClassName);
+
+    // console.log(affectedElement, switchClassNameString);
+    // console.log(affectedElement.classList);
+
+    function isModalOpen() {  // return true/false (getter function)
+        return !affectedElement.classList.contains(switchClassNameString);
+    }
+
+    function fireToggle() {
+        console.log("fireToggle called"); // Debugging line
+
+        // on each click this function runs
+
+        // isModalOpen = !isModalOpen;
+
+        affectedElement.classList.toggle(switchClassNameString);
+
+        console.log(`fireToggle works all the time`);
+    }
+
+    function handleModalClick(event) { // callback function from key listener
+        if (event.key === 'Escape' && isModalOpen()) {
+            fireToggle(); // close the modal
+        }
+    }
+
+    if (toggleModalElements !== null && affectedElement !== null) {
+        console.log("Adding event listeners"); // Debugging line
+        // check if elements are rendered to DOM
+        toggleModalElements.forEach((element) => {
+            element.addEventListener("click", fireToggle);
+            element.addEventListener("keydown", handleModalClick);
+        }); // 1st call of function
+
+        //--Here, ONLY if modal is open close it
+        //   if (affectedElement.classList) {
+        //   toggleModalElement.addEventListener("keydown", fireToggle); //2nd call of function
+        // }
+    }
+}
 
 //----------------------------------------------------
 //----------START PROGRAM-----------------------------
@@ -70,17 +106,12 @@ window.addEventListener("DOMContentLoaded", () => {
     appearElementFunc(".test-message", "display-none", 1500);
     appearElementFunc(".test-message-two", "display-none", 2000);
 
-    //MOVE THE BOOL BELOW IN PROGRAM START (This is to be used as toggleBool in the toggleMenu function)
-    // let menuOn = true;
-    toggleMenu(".menu-toggle",
-        ".sidebar",
-        "sidebar--closed",
-        {
-            close: 'kill',
-            open: 'expand'
-        });
+    toggleMenu(".menu-toggle", ".sidebar", "sidebar--closed", {
+        close: "CLOSE",
+        open: "MENU",
+    });
 
-
+    toggleModal(".btn-toggle-modal", ".modal-container", "modal--closed");
 
     //A previous example showing possibilities. kept just for personal reference:
     //This works only when we have this.examplelement
@@ -88,4 +119,8 @@ window.addEventListener("DOMContentLoaded", () => {
     //const secondElement = new AppearElement(".test-message-two", "display-none", 10000);
     // secondElement.targetElement.classList.add("alie");
     //  test
+
+    //test to delete:
+    // const buttonTest = document.querySelector(`.btn-toggle-modal`);
+    // console.log.all(`buttonTest: ${buttonTest}`);
 });

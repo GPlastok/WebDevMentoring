@@ -4,38 +4,164 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Georgios Kondylis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Narrow&family=Archivo:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="app.css" />
     <script src="index.js"></script>
   </head>
+
   <body>
     <div class="page-container">
+      <div class="main-background-img-container"></div>
       <nav class="sidebar sidebar--closed">
-        <button class="menu-toggle">close</button>
-        <div class="logo"></div>
+        <button class="menu-toggle">menu</button>
+
+        <div class="logo-name">
+          Georgios <br />
+          Kondylis
+        </div>
+        <div class="logo">
+          <!-- <img src="img/avatar-img-bw.jpg" alt="avatar large in sidebar" /> -->
+        </div>
+        <div class="logo-name-aka">
+          a.k.a. Plastok
+          <div class="logo-subtitle">UI Splendor</div>
+        </div>
         <ul class="navlist">
           <li class="navlist-item">
             <a href="#">
-              <span><ion-icon name="caret-forward-outline"></ion-icon></span>
-              <span>menuitem</span>
+              <span>Projects</span>
+              <span><ion-icon name="folder"></ion-icon></span>
             </a>
           </li>
           <li class="navlist-item">
             <a href="#">
-              <span><ion-icon name="caret-forward-outline"></ion-icon></span>
-              <span>menuitem2</span>
+              <span>About</span>
+              <span><ion-icon name="help-circle"></ion-icon></span>
+            </a>
+          </li>
+          <li class="navlist-item">
+            <a href="#">
+              <span>Contact</span>
+              <span><ion-icon name="chatbubble"></ion-icon></span>
             </a>
           </li>
         </ul>
+        <div class="social-icons">
+          <a href="#"><ion-icon name="logo-instagram"></ion-icon></a>
+          <a href="#"><ion-icon name="logo-github"></ion-icon></a>
+          <a href="#"><ion-icon name="share-social"></ion-icon></a>
+        </div>
       </nav>
+
+      <div class="background-blurry"></div>
+
+      <div class="modal-container modal--closed">
+        <div class="modal">
+          <ion-icon class="scull" name="skull"></ion-icon>
+          <div class="btn-toggle-modal">
+            <ion-icon class="close-dialog-icon" name="close-circle"></ion-icon>
+          </div>
+
+          <p>This is a modal</p>
+          <button class="btn btn--full btn-toggle-modal">BUY MY SHIT</button>
+          <!-- <button class="btn btn--full">CLOSE</button> -->
+        </div>
+      </div>
+
       <div class="page-content">
         <header class="hello">
           <h1 class="test-message display-none">Hello World!</h1>
           <h2 class="test-message-two display-none">
             This is a second message
           </h2>
+          <button class="btn btn--full btn-open-modal btn-toggle-modal">
+            Open Modal
+          </button>
         </header>
-        <div class="test-rectangle"></div>
+
+        <section id="section-selected-projects" class="grid-4cols">
+          <article class="card-project-small grid-item--1col">
+            <figure class="project-thumbnail-img"></figure>
+            <div class="flex-sample">
+              <div class="card-description-container">
+                <h4 class="card-title">Rigby app</h4>
+                <p class="card-description">
+                  An app designed for an immersive theater play.
+                </p>
+              </div>
+              <div class="tags-container">
+                <span class="tag">UI</span><span class="tag">Branding</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="card-project-small grid-item--1col">
+            <figure class="project-thumbnail-img"></figure>
+            <div class="card-description-container">
+              <h4 class="card-title">Rigby app</h4>
+              <p class="card-description">
+                An app designed for an immersive theater play.
+              </p>
+            </div>
+            <div class="tags-container">
+              <span class="tag">UI</span><span class="tag">Branding</span>
+            </div>
+          </article>
+          <article class="card-project-small grid-item--1col">
+            <figure class="project-thumbnail-img"></figure>
+            <div class="card-description-container">
+              <h4 class="card-title">Rigby app</h4>
+              <p class="card-description">
+                An app designed for an immersive theater play.
+              </p>
+            </div>
+            <div class="tags-container">
+              <span class="tag">UI</span><span class="tag">Branding</span>
+            </div>
+          </article>
+          <article class="card-project-small grid-item--1col">
+            <figure class="project-thumbnail-img"></figure>
+            <div class="card-description-container">
+              <h4 class="card-title">Rigby app</h4>
+              <p class="card-description">
+                An app designed for an immersive theater play.
+              </p>
+            </div>
+            <div class="tags-container">
+              <span class="tag">UI</span><span class="tag">Branding</span>
+            </div>
+          </article>
+          <article class="card-project-small grid-item--1col">
+            <figure class="project-thumbnail-img"></figure>
+            <div class="card-description-container">
+              <h4 class="card-title">Rigby app</h4>
+              <p class="card-description">
+                An app designed for an immersive theater play.
+              </p>
+            </div>
+            <div class="tags-container">
+              <span class="tag">UI</span><span class="tag">Branding</span>
+            </div>
+          </article>
+          <article class="card-project-small grid-item--1col">
+            <figure class="project-thumbnail-img"></figure>
+            <div class="card-description-container">
+              <h4 class="card-title">Rigby app</h4>
+              <p class="card-description">
+                An app designed for an immersive theater play.
+              </p>
+            </div>
+            <div class="tags-container">
+              <span class="tag">UI</span><span class="tag">Branding</span>
+            </div>
+          </article>
+        </section>
       </div>
     </div>
     <script
