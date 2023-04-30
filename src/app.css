@@ -62,7 +62,7 @@ figure {
   gap: 32px;
 }
 
-.grid-item--1col:nth-child(1) {
+.grid-item--1col:nth-child(3) {
   grid-column: 2;
 }
 
@@ -283,7 +283,7 @@ figure {
 
 .navlist a:hover {
   color: var(--accent-color);
-  background-color: rgb(78, 78, 78);
+  background-color: #4e4e4e;
   /* border-radius: 0 2em 2em 0; */
 }
 
