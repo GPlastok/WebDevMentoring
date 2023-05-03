@@ -396,10 +396,16 @@ figure {
   overflow: hidden;
 }
 
-.project-thumbnail-img {
+/*PLACEHOLDER */
+/* .project-thumbnail-img {
   min-height: 10em;
   background-image: url(./img/rigby-thumbnail-asset.jpg);
   background-size: cover;
+} */
+
+.card-small-thumbnail-img {
+  max-height: 10em;
+  object-fit: fill;
 }
 
 .card-description-container {
